@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background: A very clean, cool-tinted white */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: Vibrant Indigo */
+    --primary: 243 75% 59%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary: Soft Slate Blue */
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 214 32% 91%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 243 75% 59%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: 222 47% 4%; /* Deepest Navy */
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 243 75% 70%;
+    --primary-foreground: 222 47% 4%;
+
+    --secondary: 217 32% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 32% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --border: 217 32% 14%;
+    --input: 217 32% 14%;
+    --ring: 243 75% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html, body {
+    @apply overflow-x-hidden antialiased scroll-smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight text-balance;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/60 backdrop-blur-md border border-border/50;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+}
