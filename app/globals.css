@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Background: A very clean, cool-tinted white */
+
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
 
