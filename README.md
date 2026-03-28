@@ -1,4 +1,4 @@
-# CPU Scheduling Algorithm Simulator
+# PROCESS SCHEDULER
 
 An interactive simulator for learning and testing various CPU scheduling algorithms, including First Come First Serve (FCFS), Round Robin(RR), Shortest Job First(SJF) and Shortest Remaining Time First(SRTF). This project provides a visual and dynamic way to understand scheduling algorithms, making it ideal for students and enthusiasts interested in operating systems.
 
@@ -23,7 +23,6 @@ This project is a web-based simulator for CPU scheduling algorithms. It allows u
 - **Interactive Form**: Add and configure processes with attributes such as arrival time, burst time, and background color.
 - **Scheduling Algorithms**: Currently supports FCFS (First Come First Serve), RR (Round Robin), SJF (Shortest Job First) and SRTF (Shortest Remaining Time First).
 - **Real-Time Visualization**: Watch processes as they are scheduled and executed based on selected algorithms.
-- **Dark Mode Support**: Uses a ThemeProvider for seamless switching between dark and light themes.
 
 ## Technologies Used
 
@@ -33,52 +32,6 @@ This project is a web-based simulator for CPU scheduling algorithms. It allows u
 - **Zod**: For form validation schemas.
 - **React Hook Form**: Handles form state and validation.
 - **Custom Components**: Built-in components like `GradientPicker` for user-friendly UI interactions.
-
-## C++ CLI (Optional)
-
-This repo also includes a standalone C++ command-line simulator in `cpp/`.
-
-### Build
-If you have CMake installed:
-```bash
-cd cpp
-cmake -S . -B build
-cmake --build build -j
-```
-
-Otherwise (works with clang++):
-```bash
-mkdir -p cpp/build
-clang++ -std=c++17 -O2 cpp/src/main.cpp cpp/src/scheduling_algorithms.cpp cpp/src/metrics.cpp -Icpp/src -o cpp/build/scheduler_cli
-```
-
-### Run
-FCFS example:
-```bash
-./cpp/build/scheduler_cli --algo FCFS --process 1,0,5 --process 2,2,3
-```
-RR example:
-```bash
-./cpp/build/scheduler_cli --algo RR --quantum 2 --process 1,0,5 --process 2,1,4
-```
-
-## C++ Desktop GUI (Native macOS) (Optional)
-
-The `cpp-macos/` directory contains a native macOS desktop GUI built with Cocoa (Objective-C++) and your existing C++ scheduling/metrics logic.
-
-### Build
-From the repo root:
-```bash
-clang++ -std=c++17 -O2 -x objective-c++ cpp-macos/main.mm \
-  cpp/src/scheduling_algorithms.cpp cpp/src/metrics.cpp \
-  -framework Cocoa \
-  -o cpp-macos/scheduler_gui_macos
-```
-
-### Run
-```bash
-./cpp-macos/scheduler_gui_macos
-```
 
 
 ## Installation
